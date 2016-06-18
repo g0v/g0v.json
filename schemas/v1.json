@@ -3,9 +3,17 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "required": [
+    "id",
     "author"
   ],
   "properties": {
+    "id": {
+      "title": "專案識別碼",
+      "description": "Repo (owner/name)",
+      "type": "string",
+      "minLength": 1,
+      "required": true
+    },
     "author": {
       "title": "專案作者",
       "description": "Project author",
