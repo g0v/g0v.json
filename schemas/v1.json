@@ -1,0 +1,108 @@
+{
+  "id": "https://raw.githubusercontent.com/g0v/g0v.json/master/schemas/v1.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "author",
+  ],
+  "properties": {
+    "author": {
+      "title": "專案作者",
+      "description": "Project author",
+      "type": "string",
+      "minLength": 1,
+      "required": true
+    },
+    "status": {
+      "title": "專案狀態",
+      "description": "Project status",
+      "type": "string",
+      "enum": [
+        "Planning",
+        "Beta",
+        "Released",
+        "Archived"
+      ],
+      "required": false
+    },
+    "name": {
+      "title": "專案名稱（英文）",
+      "description": "Project name",
+      "type": "string",
+      "minLength": 1,
+      "required": false
+    },
+    "description": {
+      "title": "專案描述（英文）",
+      "description": "Project description",
+      "type": "string",
+      "required": false
+    },
+    "homepage": {
+      "title": "網頁",
+      "description": "Homepage url",
+      "type": "string",
+      "required": false
+    },
+    "thumbnail": {
+      "title": "縮圖",
+      "description": "Thumbnail",
+      "type": "string",
+      "required": false
+    },
+    "document": {
+      "title": "文件",
+      "description": "Document",
+      "type": "string",
+      "required": false
+    },
+    "repository": {
+      "title": "Repo 工作資料區",
+      "description": "Repository url",
+      "type": "string",
+      "required": false
+    },
+    "licenses": {
+      "title": "專案授權",
+      "description": "licenses",
+      "type": "array",
+      "required": false
+    },
+    "keywords": {
+      "title": "專案關鍵字",
+      "description": "Keywords",
+      "type": "array",
+      "required": false
+    },
+    "audience": {
+      "title": "目標受眾",
+      "description": "Target Audience",
+      "type": "array",
+      "required": false
+    },
+    "products": {
+      "title": "產出網址",
+      "description": "Production URLs",
+      "type": "array",
+      "required": false
+    },
+    "partOf": {
+      "title": "Part Of",
+      "description": "Parent project",
+      "type": "string",
+      "required": false
+    },
+    "contributors": {
+      "title": "貢獻者",
+      "description": "Contributors",
+      "type": "array",
+      "required": false
+    },
+    "needs": {
+      "title": "徵求支援",
+      "description": "Needs",
+      "type": "array",
+      "required": false
+    },
+  },
+}
