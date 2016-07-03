@@ -52,6 +52,12 @@
       "type": "string",
       "required": false
     },
+    "description_zh": {
+      "title": "專案描述（中文）",
+      "description": "Chinese project description",
+      "type": "string",
+      "required": false
+    },
     "homepage": {
       "title": "網頁",
       "description": "Homepage url",
