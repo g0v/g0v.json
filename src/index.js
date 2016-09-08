@@ -1,4 +1,9 @@
 import path from "path";
+import v1 from "../schemas/v1.json";
+
+const schemas = {
+  v1: v1,
+};
 
 class g0vJSON {
   constructor(version) {
@@ -6,7 +11,7 @@ class g0vJSON {
   }
 
   schema() {
-    return require(path.join("..", "schemas", `${this.version}.json`))
+    return schemas[this.version];
   }
 }
 
