@@ -1,5 +1,5 @@
 {
-  "id": "https://raw.githubusercontent.com/g0v/ambassador/master/bin/schema/v2.json",
+  "id": "https://raw.githubusercontent.com/g0v/g0v.json/master/schemas/v2.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "required": [
