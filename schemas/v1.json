@@ -38,7 +38,9 @@
         "Inactive",
         "inactive",
         "Magic",
-        "magic"
+        "magic",
+        "Other",
+        "other"
       ]
     },
     "name": {
@@ -90,7 +92,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["git", "hg", "svn", "cvs", "svk"]
+          "enum": ["git", "hg", "svn", "cvs", "svk", "other"]
         },
         "url": {
           "type": "string",
@@ -125,7 +127,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["contributor", "public", "developer"]
+        "enum": ["contributor", "public", "developer", "other"]
       }
     },
     "products": {
@@ -163,7 +165,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["designer", "writer", "programmer", "money", "txt"]
+        "enum": ["designer", "writer", "programmer", "money", "txt", "other"]
       }
     }
   }
