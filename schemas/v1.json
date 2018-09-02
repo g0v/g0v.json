@@ -165,7 +165,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["designer", "writer", "programmer", "money", "txt", "other"]
+        "enum": ["designer", "writer", "programmer", "money", "txt", "legal", "other"]
       }
     }
   }
