@@ -1,25 +1,16 @@
 {
   "id": "https://raw.githubusercontent.com/g0v/g0v.json/master/schemas/v1.json",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "required": [
-    "repo",
     "author"
   ],
   "properties": {
-    "repo": {
-      "title": "專案識別碼",
-      "description": "Repo Identity (owner/name)",
-      "type": "string",
-      "minLength": 1,
-      "required": true
-    },
     "author": {
       "title": "專案作者",
       "description": "Project author",
       "type": "string",
-      "minLength": 1,
-      "required": true
+      "minLength": 1
     },
     "status": {
       "title": "專案狀態",
@@ -27,18 +18,36 @@
       "type": "string",
       "enum": [
         "Planning",
+        "planning",
+        "Pre-alpha",
+        "pre-alpha",
+        "Alpha",
+        "alpha",
         "Beta",
+        "beta",
+        "Production",
+        "production",
         "Released",
-        "Archived"
-      ],
-      "required": false
+        "released",
+        "Archived",
+        "archived",
+        "Stable",
+        "stable",
+        "Mature",
+        "mature",
+        "Inactive",
+        "inactive",
+        "Magic",
+        "magic",
+        "Other",
+        "other"
+      ]
     },
     "name": {
       "title": "專案名稱（英文）",
       "description": "Project name",
       "type": "string",
-      "minLength": 1,
-      "required": false
+      "minLength": 1
     },
     "name_zh": {
       "title": "專案名稱（中文）",
@@ -49,80 +58,115 @@
     "description": {
       "title": "專案描述（英文）",
       "description": "Project description",
-      "type": "string",
-      "required": false
+      "type": "string"
     },
     "description_zh": {
       "title": "專案描述（中文）",
       "description": "Chinese project description",
-      "type": "string",
-      "required": false
+      "type": "string"
     },
     "homepage": {
       "title": "網頁",
       "description": "Homepage url",
       "type": "string",
-      "required": false
+      "format": "uri"
     },
     "thumbnail": {
       "title": "縮圖",
       "description": "Thumbnail",
-      "type": "string",
-      "required": false
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array", "items": { "type": "string", "format": "uri" } }
+      ]
     },
     "document": {
       "title": "文件",
       "description": "Document",
       "type": "string",
-      "required": false
+      "format": "uri"
     },
     "repository": {
       "title": "Repo 工作資料區",
       "description": "Repository url",
-      "type": "string",
-      "required": false
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["git", "hg", "svn", "cvs", "svk", "other"]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": ["type", "url"]
     },
     "licenses": {
       "title": "專案授權",
-      "description": "licenses",
+      "description": "Licenses",
       "type": "array",
-      "required": false
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" }
+        },
+        "required": ["type"]
+      }
     },
     "keywords": {
       "title": "專案關鍵字",
       "description": "Keywords",
       "type": "array",
-      "required": false
+      "items": {
+        "type": "string"
+      }
     },
     "audience": {
       "title": "目標受眾",
-      "description": "Target Audience",
+      "description": "Target audience",
       "type": "array",
-      "required": false
+      "items": {
+        "type": "string",
+        "enum": ["contributor", "public", "developer", "other"]
+      }
     },
     "products": {
-      "title": "產出網址",
-      "description": "Production URLs",
+      "title": "產出",
+      "description": "Productions",
       "type": "array",
-      "required": false
+      "items": {
+        "type": "string"
+      }
     },
     "partOf": {
       "title": "Part Of",
       "description": "Parent project",
-      "type": "string",
-      "required": false
+      "type": "string"
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Parent projects",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     },
     "contributors": {
       "title": "貢獻者",
       "description": "Contributors",
       "type": "array",
-      "required": false
+      "items": {
+        "type": "string"
+      }
     },
     "needs": {
       "title": "徵求支援",
       "description": "Needs",
       "type": "array",
-      "required": false
+      "items": {
+        "type": "string",
+        "enum": ["designer", "writer", "programmer", "money", "txt", "legal", "other"]
+      }
     }
   }
 }
