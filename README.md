@@ -1,5 +1,7 @@
 # g0v.json
 
+[![npm version](https://badge.fury.io/js/g0v.json.svg)](https://badge.fury.io/js/g0v.json)
+
 The metadata specification for g0v projects.
 
 ``` js
